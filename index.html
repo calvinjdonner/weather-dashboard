@@ -20,20 +20,20 @@
             <div class="row">
             <div class="col-3">
                 <h3>Search for a city:</h3>
-                <input type="text" placeholder="San Diego">
+                <input class="cityInput" type="text" placeholder="San Diego">
                 <br>
-                <button type="submit">Search</button>
+                <button class = "cities" type="submit">Search</button>
                 <div class="dropdown-divider"></div>
             
                 <div class="list-group" id="popular-cities">
-                    <button class="cities" type="button" id="1">Austin</button>
-                    <button class="cities" type="button" id="2">Berlin</button>
-                    <button class="cities" type="button" id="3">Chicago</button>
-                    <button class="cities" type="button" id="4">Dallas</button>
-                    <button class="cities" type="button" id="5">London</button>
-                    <button class="cities" type="button" id="6">Los Angeles</button>
-                    <button class="cities" type="button" id="7">New York City</button>
-                    <button class="cities" type="button" id="8">San Francisco</button>
+                    <button class="cities" type="button" id="0">Austin</button>
+                    <button class="cities" type="button" id="1">Berlin</button>
+                    <button class="cities" type="button" id="2">Chicago</button>
+                    <button class="cities" type="button" id="3">Dallas</button>
+                    <button class="cities" type="button" id="4">London</button>
+                    <button class="cities" type="button" id="5">Los Angeles</button>
+                    <button class="cities" type="button" id="6">New York City</button>
+                    <button class="cities" type="button" id="7">San Francisco</button>
                 </div>
             </div>
 
@@ -41,10 +41,10 @@
         <div class="col-9" id="main-display">
 
             <h3 class="col" id="display-city"></h3> <img src="" alt="" class="icon">
-                <div class="col">Temp:</div>
-                <div class="col">Wind:</div>
-                <div class="col">Humidity:</div>
-                <div class="col">UV Index:</div>
+                <div class="col" id="temp">Temp:</div>
+                <div class="col" id="wind">Wind:</div>
+                <div class="col" id="humidity">Humidity:</div>
+                <div class="col" id="uvi">UV Index:</div>
 
         <div class="row" id="five-day">
             <h4>5-day Forecast</h4>
