@@ -1,123 +1,51 @@
 <!DOCTYPE html>
+
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css" />
 
-        <title>Weather Dashboard</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./style.css">
+    <title>Weather Dashboard</title>
+</head>
 
-    <body>
-        <header class="jumbotron ">
-            <h1>Weather Dashboard</h1>
-        </header>
-        
-        <div class="container" id="search-bar">
+<body>
+    <div id="header" class="jumbotron jumbotron-fluid text-container">
+        <h1 id="header-text">Weather Dashboard</h1>
+        <div id="artist-credit"></div>
+    </div>
 
-            <div class="row">
-            <div class="col-3">
-                <h3>Search for a city:</h3>
-                <input class="cityInput" type="text" placeholder="San Diego">
-                <br>
-                <button class = "cities" type="submit">Search</button>
-                <div class="dropdown-divider"></div>
-            
-                <div class="list-group" id="popular-cities">
-                    <button class="cities" type="button" id="0">Austin</button>
-                    <button class="cities" type="button" id="1">Berlin</button>
-                    <button class="cities" type="button" id="2">Chicago</button>
-                    <button class="cities" type="button" id="3">Dallas</button>
-                    <button class="cities" type="button" id="4">London</button>
-                    <button class="cities" type="button" id="5">Los Angeles</button>
-                    <button class="cities" type="button" id="6">New York City</button>
-                    <button class="cities" type="button" id="7">San Francisco</button>
-                </div>
+
+    <div id="content" class="container">
+        <div class="row">
+
+            <div id="content-left" class="col-md-3">
+                <form>
+                    <label for="search-city">Search for a City:</label>
+                    <div class="form-row">
+                        <input id="search-city" class="form-control" name="city" value="Austin"></input>
+                        <button id="search-button" class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </form>
+                <div id="search-error"></div>
+                <ul id="city-results" class="list-group mt-4"></ul>
+ 
             </div>
 
-
-        <div class="col-9" id="main-display">
-
-            <h3 class="col" id="display-city"></h3> <img src="" alt="" class="icon">
-                <div class="col" id="temp">Temp:</div>
-                <div class="col" id="wind">Wind:</div>
-                <div class="col" id="humidity">Humidity:</div>
-                <div class="col" id="uvi">UV Index:</div>
-
-        <div class="row" id="five-day">
-            <h4>5-day Forecast</h4>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-date1">8/31/21</h5>
-                            <img src="" alt="" class="icon"> 
-                            <p class="card-temp">Temp:</p>
-                            <p class="card-wind">Wind:</p>
-                            <p class="card-humidity">Humidity:</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-date2">9/1/21</h5>
-                            <img src="" alt="" class="icon"> 
-                            <p class="card-temp">Temp:</p>
-                            <p class="card-wind">Wind:</p>
-                            <p class="card-humidity">Humidity:</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-date3">9/2/21</h5>
-                            <img src="" alt="" class="icon"> 
-                            <p class="card-temp">Temp:</p>
-                            <p class="card-wind">Wind:</p>
-                            <p class="card-humidity">Humidity:</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-date4">9/3/21</h5>
-                            <img src="" alt="" class="icon"> 
-                            <p class="card-temp">Temp:</p>
-                            <p class="card-wind">Wind:</p>
-                            <p class="card-humidity">Humidity:</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-date5">9/4/21</h5>
-                            <img src="" alt="" class="icon"> 
-                            <p class="card-temp">Temp:</p>
-                            <p class="card-wind">Wind:</p>
-                            <p class="card-humidity">Humidity:</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div id="content-right" class="col-md-9 pt-4">
+                <div id="current-weather" class="border rounded"></div>
+                <div id="five-day-forecast" class="mt-5"></div>
             </div>
         </div>
-        </div>
-        </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="./script.js"></script>        
-
-    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./script.js"></script>
+    
+</body>
 </html>

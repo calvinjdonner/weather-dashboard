@@ -1,88 +1,78 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1;
+#header{
+    background-size: cover;
+    background-position-y: 40%;
+    color:white;
+    background: linear-gradient(to right,#0066ff 0%, #000066 100%);
+    position:relative !important;
+}
+
+#header h1{
+    font-size: 400%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
 }
 
 .jumbotron {
-    text-align: center;
-    background: linear-gradient(50deg, rgba(90, 122, 209), rgba(26, 45, 97));
-    color: white;
-    padding: .5rem;
+    padding: 1rem;
+    border-radius: 0;
 }
 
-#search-bar {
-    display: inline-block;
+#search-city{
+    width:80%;
 }
 
-#search-bar h3 {
-    text-align: left;
-    font-weight: bold;
+#search-button-icon{
+    width:15px;
+    display:inline-block;
 }
 
-#search-bar input {
-    padding: .25rem;
-    margin-bottom: .5rem;
-    border-radius: 6px
+#current-weather {
+    padding-left: 15px;
 }
 
-#search-bar button[type=submit] {
-    border-radius: 4px;
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    padding: 8px;
-    display: inline-block;
-    width: 200px;
+#clear-storage{
+    color:grey;
+    text-decoration: none;
+    font-size:.75em;
+    margin: .5em 0em 0em .5em;
 }
 
-.dropdown-divider {
-    width: 200px;
-}
-
-.cities {
-    border-radius: 4px;
-    padding: 8px;
-    background-color: rgba(215, 215, 217);
-    color: black;
-    margin: .5rem 0 .5rem 0;
-    border: none;
-    width: 200px;
-}
-
-.cities:hover {
-    background-color:rgba(242, 242, 245);
-}
-
-#main-display {
-    border: solid;
-    border-color: rgba(215, 215, 217);
-}
-
-#main-display h3 {
-    font-weight: bold;
-}
-
-#main-display .col {
-    width: 400px;
-    padding: .5rem;
-}
-
-#five-day {
-    margin-bottom: 15px;
-}
-
-#five-day h4 {
-    font-weight: bold;
-    padding-top: 1rem;
-}
-
-.card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: rgba(72, 78, 105);
+.weather-card{
+    width: 10rem;
+    background-color: rgb(56, 53, 77);
     color: white;
 }
 
+.uv-favorable{
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+}
 
+.uv-moderate{
+    background-color: orange;
+    border-radius: 5px;
+    color: white;
+}
+
+.uv-severe{
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+@media only screen and (max-width: 992px) {
+    #search-city{
+        width:100%;
+    }
+    #search-button{
+        width:100%;
+    }
+}
+@media only screen and (max-width: 575px) {
+
+    #fiveDayForecastUl{
+        justify-content: center;
+    }
+}
